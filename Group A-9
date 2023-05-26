@@ -1,0 +1,66 @@
+def Add():
+    for i in range(0,m):
+        for j in range(0,n):
+            C[i][j]=A[i][j]+B[i][j]
+    print(C)        
+
+def Sub():
+    for i in range(0,m):
+        for j in range(0,n):
+            C[i][j]=A[i][j]-B[i][j]
+    print(C)   
+    
+def Mul():
+    for i in range(0,m):
+        for j in range(0,q):
+            for k in range(0,n):
+                 C[i][j]=C[i][j]+A[i][k]*B[k][j]
+    print(C)
+
+def transpose():
+    for i in range(0,m):
+        for j in range(0,n):
+            C[i][j]=A[j][i]
+    print(C)        
+def Transpose():
+    for i in range(0,m):
+        for j in range(0,n):
+            C[i][j]=B[j][i]
+    print(C)            
+
+
+
+m=int(input("Enter no. of rows in first matrix :"))
+n=int(input("\nEnter no. of columns in first matrix :"))
+A=[[0 for j in range(0,n)]for i in range(0,m)]
+print("\nEnter elements of matrix A :")
+for i in range(0,m):
+    for j in range(0,n):
+        A[i][j]=int(input("Enter element {} {} :".format(i,j)))
+print("Matrix A :",A)        
+
+p=int(input("\nEnter no. of rows in second matrix :"))
+q=int(input("\nEnter no. of columns in second matrix :"))
+B=[[0 for j in range(0,q)]for i in range(0,p)]
+print("\nEnter elements of matrix B :")
+for i in range(0,p):
+    for j in range(0,q):
+        B[i][j]=int(input("Enter element {} {} :".format(i,j)))
+print("Matrix B :",B)
+
+C=[[0 for j in range(0,q)]for i in range(0,n)]
+
+print("\nAddition of matrix A and B :")
+Add()
+print("----------------------------")
+print("\nSubtraction of matrix A and B :")
+Sub()
+print("----------------------------")
+print("\nMultiplication of matrix A and B :")
+Mul()
+print("----------------------------")
+print("\nTranspose of matrix A :")
+transpose()
+print("\nTranspose of matrix B :")
+Transpose()
+
